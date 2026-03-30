@@ -1,9 +1,3 @@
-# =============================================================================
-#  SISTEMA NUTRICIONAL COMPLETO
-#  Funcionalidades: Login/Cadastro | Calculadora TMB | Refeições por Data |
-#                  Histórico por Usuário | Base de Comidas e Bebidas
-# =============================================================================
-
 import streamlit as st        # Framework para criar o site interativo
 import pandas as pd           # Manipulação de tabelas de dados
 import numpy as np            # Cálculos numéricos
@@ -701,10 +695,10 @@ def aba_buscador_alimentos():
     col_data, col_nome, col_limpar = st.columns([1, 2, 1])
 
     with col_data:
-        # Seletor de data — padrão: hoje
         data_escolhida = st.date_input(
             "Data da refeição:",
             value=st.session_state.data_refeicao,
+            format="DD/MM/YYYY",
             key="seletor_data"
         )
         st.session_state.data_refeicao = data_escolhida  # Persiste na sessão
@@ -983,9 +977,9 @@ def aba_historico():
     col_ini, col_fim, col_btn = st.columns([1, 1, 1])
 
     with col_ini:
-        data_inicio = st.date_input("De:", value=date.today().replace(day=1), key="hist_ini")
+        data_inicio = st.date_input("De:", value=date.today().replace(day=1), format="DD/MM/YYYY", key="hist_ini")
     with col_fim:
-        data_fim = st.date_input("Até:", value=date.today(), key="hist_fim")
+        data_fim = st.date_input("Até:", value=date.today(), format="DD/MM/YYYY", key="hist_fim")
     with col_btn:
         st.markdown("<br>", unsafe_allow_html=True)
         buscar = st.button("🔍 Buscar", use_container_width=True, type="primary")
