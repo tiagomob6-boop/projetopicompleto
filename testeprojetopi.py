@@ -3,7 +3,7 @@ import pandas as pd           # Manipulação de tabelas de dados
 import numpy as np            # Cálculos numéricos
 import os                     # Acesso a arquivos do sistema
 import sqlite3                # Banco de dados local (sem precisar instalar nada extra)
-import hashlib                # Para criptografar senhas com SHA-256
+import hashlib                # Para criptografar senhas com SHA-25
 from datetime import datetime, date  # Trabalhar com datas e horários
 
 # ==============================================================================
@@ -502,11 +502,11 @@ def aba_sobre_nutricao():
             ]
         })
         st.table(categorias)
-
+        
         st.markdown("---")
         st.markdown("""
         ### ⚠️ 1. Desinformação Nutricional
-
+    
         As redes sociais frequentemente propagam dietas milagrosas e o medo injustificado de
         alimentos (como glúten e carboidratos). Essas práticas podem levar a:
 
@@ -530,6 +530,7 @@ def aba_sobre_nutricao():
         do emagrecimento saudável. Recomenda-se um déficit gradual de **200 a 500 kcal/dia**.
         """)
 
+
         col_tmb, col_tmt = st.columns(2)
         with col_tmb:
             st.info("""
@@ -548,15 +549,25 @@ def aba_sobre_nutricao():
             • Fator de atividade: 1,2 a 1,9
             """)
 
-        st.markdown("---")
-        st.markdown("""
-        ### 🛡️ 3. Como se Proteger
 
-        - **Verifique a fonte:** Priorize informações de nutricionistas registrados e órgãos oficiais.
-        - **Desconfie de promessas rápidas:** Não existem milagres alimentares sem evidência científica.
-        - **Déficit calórico comprovado:** Para emagrecimento saudável, é necessário fazer déficit calórico.
-        - **Individualidade:** Dietas devem ser personalizadas por profissionais.
-        """)
+        st.markdown("---")
+        st.markdown("⚖️ 3. Como As Calorias Agem No Nosso Corpo.")
+        st.markdown("""Imagine o seu corpo como um carro: as calorias são o combustível que faz tudo funcionar,
+                    desde o bater do coração até uma corrida no parque. Se você coloca combustível demais e não usa, 
+                    o corpo guarda esse estoque em forma de gordura para emergências. 
+                    Mas não é só a quantidade que importa; o tipo de caloria dita o ritmo do seu metabolismo. 
+                    Por exemplo, 100 calorias de açúcar dão energia rápida, mas logo te deixam com fome de novo,
+                    enquanto 100 calorias de proteína exigem mais esforço do corpo para digerir, mantendo você satisfeito por muito mais tempo""")
+        st.markdown("---")
+
+        st.markdown("**🥦 4.  Como a Origem dos Alimentos Infuenciam a Digestão**.")
+        st.markdown("""A origem dos alimentos funciona como a "qualidade" desse combustível e das peças de reposição. 
+                    Alimentos naturais (como frutas, carnes e grãos) vêm "completos", trazendo fibras e vitaminas que regulam o intestino e os hormônios,
+                    deixando sua máquina rodando macio. 
+                    Já os alimentos ultraprocessados (como salgadinhos e refrigerantes) são como combustível batizado: dão energia, mas inflamam o corpo, bagunçam os sinais de saciedade e podem causar danos a longo prazo, como diabetes e cansaço constante. 
+                    No fim das contas, a origem do que você come decide se seu corpo vai trabalhar a seu favor ou contra você""")
+        st.markdown("---")
+
 
     with col2:
         st.markdown("""
@@ -592,6 +603,13 @@ def aba_sobre_nutricao():
         - [Ministério da Saúde](https://www.gov.br/saude)
         - [Guia Alimentar da População Brasileira](https://www.gov.br/saude)
         - [CFN — Conselho Federal de Nutrição](https://www.cfn.org.br)
+        """)
+        st.markdown("""
+        ###  Como se Proteger
+
+        - **Verifique a fonte:** Priorize informações de nutricionistas registrados e órgãos oficiais.
+        - **Desconfie de promessas rápidas:** Não existem milagres alimentares sem evidência científica.
+        - **Déficit calórico comprovado:** Para emagrecimento saudável, é necessário fazer déficit calórico.
         """)
 
 
