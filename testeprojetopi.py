@@ -551,23 +551,39 @@ def aba_sobre_nutricao():
 
 
         st.markdown("---")
-        st.markdown("⚖️ 3. Como As Calorias Agem No Nosso Corpo.")
-        st.markdown("""Imagine o seu corpo como um carro: as calorias são o combustível que faz tudo funcionar,
-                    desde o bater do coração até uma corrida no parque. Se você coloca combustível demais e não usa, 
-                    o corpo guarda esse estoque em forma de gordura para emergências. 
-                    Mas não é só a quantidade que importa; o tipo de caloria dita o ritmo do seu metabolismo. 
-                    Por exemplo, 100 calorias de açúcar dão energia rápida, mas logo te deixam com fome de novo,
-                    enquanto 100 calorias de proteína exigem mais esforço do corpo para digerir, mantendo você satisfeito por muito mais tempo""")
-        st.markdown("---")
+        st.markdown("### ⚖️ 3. Como as Calorias Agem no Corpo")
 
-        st.markdown("**🥦 4.  Como a Origem dos Alimentos Infuenciam a Digestão**.")
-        st.markdown("""A origem dos alimentos funciona como a "qualidade" desse combustível e das peças de reposição. 
-                    Alimentos naturais (como frutas, carnes e grãos) vêm "completos", trazendo fibras e vitaminas que regulam o intestino e os hormônios,
-                    deixando sua máquina rodando macio. 
-                    Já os alimentos ultraprocessados (como salgadinhos e refrigerantes) são como combustível batizado: dão energia, mas inflamam o corpo, bagunçam os sinais de saciedade e podem causar danos a longo prazo, como diabetes e cansaço constante. 
-                    No fim das contas, a origem do que você come decide se seu corpo vai trabalhar a seu favor ou contra você""")
-        st.markdown("---")
+        st.markdown("""
+        O corpo funciona como um sistema de energia.
 
+        - Calorias são o combustível
+        - O corpo usa para viver, se mover e digerir
+
+        Diferença importante:
+        - Açúcar → energia rápida, baixa saciedade
+        - Proteína → digestão mais lenta, maior saciedade
+
+        Isso acontece por causa do **efeito térmico dos alimentos** (gasto para digerir).
+        """)
+
+        st.markdown("---")
+        st.markdown("### 🥦 4. Como a Origem dos Alimentos Influencia o Corpo")
+
+        st.markdown("""
+        A qualidade dos alimentos impacta diretamente sua saúde.
+
+        - **Alimentos naturais:** ricos em fibras, vitaminas e minerais
+        - **Ultraprocessados:** pobres em nutrientes e ricos em aditivos
+
+        Consequências:
+        - Melhora ou piora da digestão
+        - Controle de fome
+        - Risco de doenças (ex: diabetes)
+        """)
+
+        
+    
+    
 
     with col2:
         st.markdown("""
@@ -587,6 +603,18 @@ def aba_sobre_nutricao():
         - Preferir comida caseira
         - Mastigar bem os alimentos
         - Beber água ao longo do dia
+        """)
+        st.markdown("---")
+        st.header("📌. **Resumo prático dos conceitos chave.**")
+        st.info("""
+        - Proteína → 4 kcal/g
+        - Carboidrato → 4 kcal/g
+        - Gordura → 9 kcal/g
+
+        Regra básica:
+        - Comer mais calorias do que gasta → ganho de peso
+        - Comer menos caloris do que gasta→ perda de peso
+        - Comer calorias igual do que gasta → mantem o peso
         """)
         st.markdown("---")
         st.warning("""
@@ -627,9 +655,9 @@ def aba_calculadora_tmb():
     with col1:
         st.subheader("📝 Dados Pessoais")
 
-        peso    = st.number_input("Peso (kg)",    min_value=20.0,  max_value=200.0, value=70.0,  step=0.1)
+        peso    = st.number_input("Peso (kg)",    min_value=20.0,  max_value=300.0, value=70.0,  step=0.1)
         altura  = st.number_input("Altura (cm)",  min_value=100.0, max_value=250.0, value=170.0, step=0.1)
-        idade   = st.number_input("Idade",        min_value=15,    max_value=100,   value=30,    step=1)
+        idade   = st.number_input("Idade",        min_value=1,    max_value=100,   value=30,    step=1)
         sexo    = st.selectbox("Sexo", ["Homem", "Mulher"])
 
         atividade = st.selectbox(
@@ -686,7 +714,7 @@ def aba_calculadora_tmb():
 
 
 # ==============================================================================
-# SEÇÃO 7 — ABA 3: CALCULADORA DE REFEIÇÃO (com data e nome)
+# SEÇÃO 7 — ABA 3: CALCULADORA DE REFEIÇÃO 
 # ==============================================================================
 
 def aba_buscador_alimentos():
@@ -788,7 +816,7 @@ def aba_buscador_alimentos():
                     value=100, step=10, key="qtd_comida"
                 )
 
-                # Cálculo proporcional (tabela está por 100g — ajuste se necessário)
+                # Cálculo proporcional (tabela está por 100g)
                 # A tabela armazena valores POR GRAMA, então multiplica direto pela quantidade
                 kcal  = info['Calorias (kcal)']    * qtd
                 prot  = info['Proteínas (g)']      * qtd
