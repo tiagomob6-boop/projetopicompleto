@@ -564,14 +564,14 @@
 563;Doce de Leite;3,1;0,06;0,55;0,1;0,07
 564;Bolo Simples;3,5;0,05;0,45;0,1;0,17
 565;Sonho de Padaria;3,2;0,05;0,48;0,1;0,12
-566;Strogonoff de Carne ;1,6;0,09;0,04;0;0,11
+566;Strogonoff de Carne;1,6;0,09;0,04;0;0,11
 570;Strogonoff de Frango;1,5;0,11;0,03;0;0,09
 571;Strogonoff de Frango (light);1,2;0,12;0,03;0;0,06
 572;Strogonoff de Carne (com requeijão);1,8;0,09;0,05;0;0,13
 573;Strogonoff de Camarão;1,4;0,12;0,04;0;0,08
 574;Strogonoff de cogumelos;1,1;0,04;0,06;0,01;0,07
-575;Rocambole ;3,4;0,05;0,58;0,01;0,1
-577;Rosbife ;1,6;0,25;0;0;0,06
+575;Rocambole;3,4;0,05;0,58;0,01;0,1
+577;Rosbife;1,6;0,25;0;0;0,06
 578;Iogurte Grego Tradicional;1,13;0,047;0,088;0;0,065
 579;Iogurte Grego Desnatado;0,59;0,103;0,036;0;0
 580;Iogurte Grego com Morango;1,35;0,041;0,182;0,004;0,051
@@ -600,10 +600,8 @@
 603;Whey Concentrado (WPC);4,01;0,8;0,12;0;0,05
 604;Whey Isolado (WPI);3,7;0,92;0,01;0;0
 605;Whey Hidrolisado (WPH);3,75;0,9;0,02;0;0,01
-606;sonho de valsa(bombom preto);"
-5,5";0,06;0,6;0,03;0,32
-607;sonho de valsa(bombom branco);"
-5,5";0,06;0,6;0,03;0,32
+606;sonho de valsa(bombom preto);5,5;0,06;0,6;0,03;0,32
+607;sonho de valsa(bombom branco);5,5;0,06;0,6;0,03;0,32
 608;Sashimi Salmão (só peixe);2,08;0,2;0;0,14;0
 609;Sashimi Atum (só peixe);1,08;0,24;0;0,01;0
 610;Nigiri Salmão (peixe + arroz);1,5;0,06;0,22;0,04;0,01
@@ -620,76 +618,76 @@
 621;Gunkamaki Salmão (Dyo);1,9;0,1;0,08;0,12;0
 622;Shimeji na Manteiga;1,15;0,03;0,06;0,09;0,02
 623;Sunomono (Pepino agridoce);0,45;0,01;0,1;0;0,01
-624;Barra de cereal banana, aveia e mel (Marca Ritter); 4.0 ; 0.08 ; 0.60 ; 0.08 ; 0.16 
-625;Barra de cereal morango com chocolate (Marca Ritter); 4.0 ; 0.06 ; 0.72 ; 0.04 ; 0.09 
-626;Barra de cereal brigadeiro (Marca Ritter); 4.1 ; 0.05 ; 0.64 ; 0.06 ; 0.13 
-627;Barra de cereal avelã e castanha (Marca Ritter); 4.0 ; 0.05 ; 0.72 ; 0.03 ; 0.09 
-628;Barra de cereal frutas vermelhas (Marca Ritter); 3.9 ; 0.07 ; 0.65 ; 0.07 ; 0.12 
-629;Barra de cereal chocolate branco e morango (Marca Ritter); 4.1 ; 0.06 ; 0.70 ; 0.04 ; 0.12 
-630;Barra de cereal brownie chocolate (Marca Ritter); 4.2 ; 0.06 ; 0.68 ; 0.05 ; 0.14 
-631;Barra de cereal banana nuts (Marca Ritter); 4.0 ; 0.08 ; 0.62 ; 0.07 ; 0.13 
-632;Barra de cereal mocca café com chocolate (Marca Ritter); 4.1 ; 0.06 ; 0.67 ; 0.05 ; 0.14 
-633;Barra de cereal light morango (Marca Ritter); 3.5 ; 0.07 ; 0.60 ; 0.08 ; 0.08 
-634;Barra de cereal Nesquik chocolate (Marca Nestlé); 4.1 ; 0.07 ; 0.69 ; 0.05 ; 0.12 
-635;Barra de cereal Fitness morango (Marca Nestlé); 3.8 ; 0.08 ; 0.65 ; 0.07 ; 0.10 
-636;Barra de cereal Fitness banana e aveia (Marca Nestlé); 3.9 ; 0.08 ; 0.66 ; 0.08 ; 0.10 
-637;Barra de cereal Nutry castanha com chocolate (Marca Nutry); 4.2 ; 0.07 ; 0.60 ; 0.06 ; 0.15 
-638;Barra de cereal Nutry coco com chocolate (Marca Nutry); 4.3 ; 0.06 ; 0.62 ; 0.05 ; 0.16 
-639;Barra de cereal Nutry banana (Marca Nutry); 4.0 ; 0.07 ; 0.65 ; 0.07 ; 0.13 
-640;Barra de cereal Sucrilhos chocolate (Marca Kellogg’s); 3.4 ; 0.05 ; 0.60 ; 0.03 ; 0.09 
-641;Barra de cereal Sucrilhos original (Marca Kellogg’s); 4.2 ; 0.06 ; 0.68 ; 0.03 ; 0.11 
-642;Barra de cereal Nutri-Grain morango (Marca Kellogg’s); 4.1 ; 0.05 ; 0.70 ; 0.04 ; 0.10 
-643;Barra de cereal Trio frutas (Marca Nestlé); 3.7 ; 0.07 ; 0.64 ; 0.08 ; 0.09 
-644;Pudim de leite condensado tradicional; 3.2 ; 0.07 ; 0.45 ; 0.00 ; 0.12 
-645;Pudim de chocolate; 3.5 ; 0.06 ; 0.50 ; 0.02 ; 0.14 
-646;Pudim de baunilha; 3.3 ; 0.06 ; 0.48 ; 0.00 ; 0.12 
-647;Pudim de coco; 3.6 ; 0.05 ; 0.40 ; 0.01 ; 0.18 
-648;Pudim de leite ninho; 3.4 ; 0.07 ; 0.46 ; 0.00 ; 0.13 
-649;Pudim diet (sem açúcar); 2.2 ; 0.08 ; 0.20 ; 0.00 ; 0.10 
-650;Pudim light; 2.6 ; 0.08 ; 0.30 ; 0.00 ; 0.09 
-651;Pudim proteico; 2.8 ; 0.15 ; 0.25 ; 0.00 ; 0.08 
-652;Pudim de frutas (morango/maracujá); 2.9 ; 0.04 ; 0.55 ; 0.02 ; 0.06 
-653;Pudim vegano (leite vegetal); 2.7 ; 0.03 ; 0.50 ; 0.02 ; 0.07 
-654;Cachorro-quente tradicional (pão + salsicha + molho); 2.6 ; 0.10 ; 0.28 ; 0.01 ; 0.12 
-655;Cachorro-quente simples (pão + salsicha); 2.8 ; 0.11 ; 0.26 ; 0.01 ; 0.14 
-656;Cachorro-quente com queijo; 3.0 ; 0.12 ; 0.25 ; 0.01 ; 0.16 
-657;Cachorro-quente completo (milho, ervilha, batata palha, molho); 2.7 ; 0.09 ; 0.32 ; 0.02 ; 0.11 
-658;Cachorro-quente com bacon; 3.2 ; 0.13 ; 0.24 ; 0.01 ; 0.20 
-659;Cachorro-quente prensado; 3.1 ; 0.11 ; 0.27 ; 0.01 ; 0.18 
-660;Cachorro-quente com purê de batata; 2.5 ; 0.08 ; 0.35 ; 0.02 ; 0.09 
-661;Cachorro-quente vegano; 2.4 ; 0.09 ; 0.30 ; 0.03 ; 0.08 
-662;Cachorro-quente com duas salsichas; 3.0 ; 0.14 ; 0.25 ; 0.01 ; 0.17 
-663;Cachorro-quente gourmet (molhos especiais + queijo + carne); 3.3 ; 0.13 ; 0.26 ; 0.02 ; 0.22 
-664;Hambúrguer tradicional (pão + carne); 2.5 ; 0.13 ; 0.20 ; 0.01 ; 0.12 
-665;Hambúrguer com queijo; 2.9 ; 0.14 ; 0.19 ; 0.01 ; 0.16 
-666;Hambúrguer completo; 2.6 ; 0.12 ; 0.23 ; 0.02 ; 0.11 
-667;Hambúrguer duplo; 3.0 ; 0.16 ; 0.18 ; 0.01 ; 0.18 
-668;Hambúrguer com bacon; 3.2 ; 0.15 ; 0.18 ; 0.01 ; 0.22 
-669;Hambúrguer artesanal; 2.8 ; 0.15 ; 0.18 ; 0.01 ; 0.17 
-670;Hambúrguer de frango; 2.3 ; 0.14 ; 0.20 ; 0.01 ; 0.09 
-671;Hambúrguer vegetariano; 2.1 ; 0.10 ; 0.25 ; 0.03 ; 0.07 
-672;Hambúrguer vegano; 2.0 ; 0.09 ; 0.26 ; 0.04 ; 0.06 
-673;Hambúrguer gourmet; 3.3 ; 0.14 ; 0.20 ; 0.01 ; 0.23 
-674;Hambúrguer com ovo; 2.9 ; 0.15 ; 0.19 ; 0.01 ; 0.17 
-675;Hambúrguer com cheddar; 3.1 ; 0.14 ; 0.18 ; 0.01 ; 0.20 
-676;Hambúrguer triplo; 3.3 ; 0.18 ; 0.17 ; 0.01 ; 0.22 
-677;Hambúrguer com molho especial; 2.8 ; 0.13 ; 0.22 ; 0.01 ; 0.15 
-678;Hambúrguer com onion rings; 3.0 ; 0.12 ; 0.25 ; 0.02 ; 0.17 
-679;Hambúrguer com barbecue; 2.9 ; 0.13 ; 0.24 ; 0.01 ; 0.15 
-680;Hambúrguer com catupiry; 3.2 ; 0.13 ; 0.19 ; 0.01 ; 0.22 
-681;Hambúrguer com picles; 2.6 ; 0.12 ; 0.23 ; 0.02 ; 0.11 
-682;Hambúrguer com alface e tomate; 2.5 ; 0.12 ; 0.24 ; 0.02 ; 0.10 
-683;Hambúrguer com maionese; 3.1 ; 0.13 ; 0.20 ; 0.01 ; 0.21 
-684;Hambúrguer com mostarda; 2.6 ; 0.13 ; 0.22 ; 0.01 ; 0.12 
-685;Hambúrguer com ketchup; 2.7 ; 0.12 ; 0.25 ; 0.01 ; 0.11 
-686;Hambúrguer com bacon e queijo; 3.3 ; 0.15 ; 0.18 ; 0.01 ; 0.23 
-687;Hambúrguer com carne suína; 3.0 ; 0.14 ; 0.18 ; 0.01 ; 0.19 
-688;Hambúrguer de peixe; 2.4 ; 0.13 ; 0.22 ; 0.01 ; 0.10 
-689;Hambúrguer de peru; 2.2 ; 0.15 ; 0.20 ; 0.01 ; 0.08 
-690;Hambúrguer low carb (sem pão); 2.7 ; 0.18 ; 0.05 ; 0.00 ; 0.20 
-691;Hambúrguer com pão integral; 2.4 ; 0.13 ; 0.22 ; 0.03 ; 0.10 
-692;Hambúrguer com queijo duplo; 3.2 ; 0.15 ; 0.18 ; 0.01 ; 0.22 
-693;Hambúrguer premium (blend especial); 3.1 ; 0.16 ; 0.17 ; 0.01 ; 0.21 
+624;Barra de cereal banana, aveia e mel (Marca Ritter);4.0;0.08;0.60;0.08;0.16
+625;Barra de cereal morango com chocolate (Marca Ritter);4.0;0.06;0.72;0.04;0.09
+626;Barra de cereal brigadeiro (Marca Ritter);4.1;0.05;0.64;0.06;0.13
+627;Barra de cereal avelã e castanha (Marca Ritter);4.0;0.05;0.72;0.03;0.09
+628;Barra de cereal frutas vermelhas (Marca Ritter);3.9;0.07;0.65;0.07;0.12
+629;Barra de cereal chocolate branco e morango (Marca Ritter);4.1;0.06;0.70;0.04;0.12
+630;Barra de cereal brownie chocolate (Marca Ritter);4.2;0.06;0.68;0.05;0.14
+631;Barra de cereal banana nuts (Marca Ritter);4.0;0.08;0.62;0.07;0.13
+632;Barra de cereal mocca café com chocolate (Marca Ritter);4.1;0.06;0.67;0.05;0.14
+633;Barra de cereal light morango (Marca Ritter);3.5;0.07;0.60;0.08;0.08
+634;Barra de cereal Nesquik chocolate (Marca Nestlé);4.1;0.07;0.69;0.05;0.12
+635;Barra de cereal Fitness morango (Marca Nestlé);3.8;0.08;0.65;0.07;0.10
+636;Barra de cereal Fitness banana e aveia (Marca Nestlé);3.9;0.08;0.66;0.08;0.10
+637;Barra de cereal Nutry castanha com chocolate (Marca Nutry);4.2;0.07;0.60;0.06;0.15
+638;Barra de cereal Nutry coco com chocolate (Marca Nutry);4.3;0.06;0.62;0.05;0.16
+639;Barra de cereal Nutry banana (Marca Nutry);4.0;0.07;0.65;0.07;0.13
+640;Barra de cereal Sucrilhos chocolate (Marca Kellogg’s);3.4;0.05;0.60;0.03;0.09
+641;Barra de cereal Sucrilhos original (Marca Kellogg’s);4.2;0.06;0.68;0.03;0.11
+642;Barra de cereal Nutri-Grain morango (Marca Kellogg’s);4.1;0.05;0.70;0.04;0.10
+643;Barra de cereal Trio frutas (Marca Nestlé);3.7;0.07;0.64;0.08;0.09
+644;Pudim de leite condensado tradicional;3.2;0.07;0.45;0.00;0.12
+645;Pudim de chocolate;3.5;0.06;0.50;0.02;0.14
+646;Pudim de baunilha;3.3;0.06;0.48;0.00;0.12
+647;Pudim de coco;3.6;0.05;0.40;0.01;0.18
+648;Pudim de leite ninho;3.4;0.07;0.46;0.00;0.13
+649;Pudim diet (sem açúcar);2.2;0.08;0.20;0.00;0.10
+650;Pudim light;2.6;0.08;0.30;0.00;0.09
+651;Pudim proteico;2.8;0.15;0.25;0.00;0.08
+652;Pudim de frutas (morango/maracujá);2.9;0.04;0.55;0.02;0.06
+653;Pudim vegano (leite vegetal);2.7;0.03;0.50;0.02;0.07
+654;Cachorro-quente tradicional (pão + salsicha + molho);2.6;0.10;0.28;0.01;0.12
+655;Cachorro-quente simples (pão + salsicha);2.8;0.11;0.26;0.01;0.14
+656;Cachorro-quente com queijo;3.0;0.12;0.25;0.01;0.16
+657;Cachorro-quente completo (milho, ervilha, batata palha, molho);2.7;0.09;0.32;0.02;0.11
+658;Cachorro-quente com bacon;3.2;0.13;0.24;0.01;0.20
+659;Cachorro-quente prensado;3.1;0.11;0.27;0.01;0.18
+660;Cachorro-quente com purê de batata;2.5;0.08;0.35;0.02;0.09
+661;Cachorro-quente vegano;2.4;0.09;0.30;0.03;0.08
+662;Cachorro-quente com duas salsichas;3.0;0.14;0.25;0.01;0.17
+663;Cachorro-quente gourmet (molhos especiais + queijo + carne);3.3;0.13;0.26;0.02;0.22
+664;Hambúrguer tradicional (pão + carne);2.5;0.13;0.20;0.01;0.12
+665;Hambúrguer com queijo;2.9;0.14;0.19;0.01;0.16
+666;Hambúrguer completo;2.6;0.12;0.23;0.02;0.11
+667;Hambúrguer duplo;3.0;0.16;0.18;0.01;0.18
+668;Hambúrguer com bacon;3.2;0.15;0.18;0.01;0.22
+669;Hambúrguer artesanal;2.8;0.15;0.18;0.01;0.17
+670;Hambúrguer de frango;2.3;0.14;0.20;0.01;0.09
+671;Hambúrguer vegetariano;2.1;0.10;0.25;0.03;0.07
+672;Hambúrguer vegano;2.0;0.09;0.26;0.04;0.06
+673;Hambúrguer gourmet;3.3;0.14;0.20;0.01;0.23
+674;Hambúrguer com ovo;2.9;0.15;0.19;0.01;0.17
+675;Hambúrguer com cheddar;3.1;0.14;0.18;0.01;0.20
+676;Hambúrguer triplo;3.3;0.18;0.17;0.01;0.22
+677;Hambúrguer com molho especial;2.8;0.13;0.22;0.01;0.15
+678;Hambúrguer com onion rings;3.0;0.12;0.25;0.02;0.17
+679;Hambúrguer com barbecue;2.9;0.13;0.24;0.01;0.15
+680;Hambúrguer com catupiry;3.2;0.13;0.19;0.01;0.22
+681;Hambúrguer com picles;2.6;0.12;0.23;0.02;0.11
+682;Hambúrguer com alface e tomate;2.5;0.12;0.24;0.02;0.10
+683;Hambúrguer com maionese;3.1;0.13;0.20;0.01;0.21
+684;Hambúrguer com mostarda;2.6;0.13;0.22;0.01;0.12
+685;Hambúrguer com ketchup;2.7;0.12;0.25;0.01;0.11
+686;Hambúrguer com bacon e queijo;3.3;0.15;0.18;0.01;0.23
+687;Hambúrguer com carne suína;3.0;0.14;0.18;0.01;0.19
+688;Hambúrguer de peixe;2.4;0.13;0.22;0.01;0.10
+689;Hambúrguer de peru;2.2;0.15;0.20;0.01;0.08
+690;Hambúrguer low carb (sem pão);2.7;0.18;0.05;0.00;0.20
+691;Hambúrguer com pão integral;2.4;0.13;0.22;0.03;0.10
+692;Hambúrguer com queijo duplo;3.2;0.15;0.18;0.01;0.22
+693;Hambúrguer premium (blend especial);3.1;0.16;0.17;0.01;0.21
 694;Whey chocolate (Marca Growth Supplements – Tipo: Concentrado);4;0,8;0,08;0;0,06
 695;Whey baunilha (Marca Growth Supplements – Tipo: Concentrado);4;0,79;0,09;0;0,06
 696;Whey morango (Marca Growth Supplements – Tipo: Concentrado);3,9;0,78;0,1;0;0,05
@@ -718,5 +716,21 @@
 719;Whey hidrolisado chocolate (Marca Probiótica – Tipo: Hidrolisado);3,9;0,92;0,02;0;0,02
 720;Whey hidrolisado baunilha (Marca Dux Nutrition – Tipo: Hidrolisado);3,9;0,91;0,03;0;0,02
 721;Whey protein chocolate (Marca Black Skull – Tipo: Concentrado);4,2;0,72;0,15;0,01;0,08
-722;Whey protein morango (Marca Black Skull – Tipo: Concentrado);4,1;0,72;0,15;0,01;0,07
-723;Whey protein baunilha (Marca Black Skull – Tipo: Concentrado);4,1;0,73;0,14;0,01;0,07
+724;Whey protein morango (Marca Black Skull – Tipo: Concentrado);4,1;0,72;0,15;0,01;0,07
+725;Whey protein baunilha (Marca Black Skull – Tipo: Concentrado);4,1;0,73;0,14;0,01;0,07
+726;Suflê de queijo;2,2;0,1;0,04;0,17;0
+727;Suflê de frango;1,7;0,12;0,03;0,1;0
+728;Suflê de legumes;1,1;0,04;0,09;0,06;0,02
+729;Suflê de milho;1,5;0,05;0,17;0,06;0,02
+730;Suflê doce;2,4;0,06;0,26;0,11;0,01
+731;Torta de frango;2,6;0,13;0,19;0,15;0,01
+732;Torta de carne;2,9;0,14;0,21;0,18;0,01
+733;Torta de legumes;2,1;0,06;0,24;0,11;0,02
+734;Torta de queijo;3,1;0,11;0,17;0,22;0
+735;Empadão;3,3;0,1;0,22;0,23;0,01
+736;Torta de chocolate;3,9;0,05;0,46;0,21;0,02
+737;Torta de limão;3,1;0,04;0,39;0,15;0,01
+738;Torta de morango;2,8;0,04;0,37;0,13;0,02
+739;Torta de maçã;2,6;0,03;0,41;0,1;0,02
+740;Cheesecake;3,6;0,06;0,29;0,25;0
+741;Torta de bolacha;3,4;0,05;0,4;0,18;0,01
