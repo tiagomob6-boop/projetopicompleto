@@ -10,7 +10,7 @@ from datetime import datetime, date  # Trabalhar com datas e horários
 # CONFIGURAÇÃO DA PÁGINA (deve ser o primeiro comando Streamlit do arquivo)
 # ==============================================================================
 st.set_page_config(
-    page_title="Sistema Nutricional",
+    page_title="Sistema Nutricional", #titulo da pagina
     page_icon="🥗",
     layout="wide"
 )
@@ -25,6 +25,7 @@ st.markdown("""
         padding: 2rem;
         box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
+
     /* Cor de destaque nos títulos */
     .titulo-verde {
         color: #2e7d32;
@@ -162,7 +163,7 @@ def salvar_refeicao(user_id: int, data_refeicao: str, nome_refeicao: str,
     Retorna (True, mensagem) ou (False, erro).
     """
     try:
-        conn = sqlite3.connect('nutricional.db')
+        conn = sqlite3.connect('nutricional.db') # inicia a conecção com a nutricional.db
         cursor = conn.cursor()
 
         # 1. Insere o cabeçalho da refeição
@@ -178,13 +179,13 @@ def salvar_refeicao(user_id: int, data_refeicao: str, nome_refeicao: str,
 
         refeicao_id = cursor.lastrowid  # ID gerado para usar nos itens
 
-        # 2. Insere cada alimento/bebida da lista
+        # 2. Insere cada alimento/bebida da lista e usamos ? para não pegar algum valor que não precisamos
         for item in lista_alimentos:
             cursor.execute('''
                 INSERT INTO itens_refeicao
                     (refeicao_id, alimento, quantidade, unidade,
                      kcal, proteina, carboidrato, gordura, fibra, categoria)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
             ''', (refeicao_id, item['alimento'], item['quantidade'], item['unidade'],
                   item['kcal'], item['proteina'], item['carboidrato'],
                   item['gordura'], item['fibra'], item['categoria']))
@@ -295,9 +296,11 @@ def tela_login():
         with aba_login:
             st.markdown("### Acesse sua conta")
 
-            username_login = st.text_input(
+            # determina campos para o  usuario colocar as informações com senha criptografada 
+
+            username_login = st.text_input(  
                 "Nome de usuário", key="login_user",
-                placeholder="seu_usuario"
+                placeholder="seu_usuario" 
             )
             senha_login = st.text_input(
                 "Senha", type="password", key="login_pass",
@@ -305,6 +308,7 @@ def tela_login():
             )
 
             col_btn, _ = st.columns([1, 1])
+            #logica de verificar se o usuario informou o usuario informou a informações de 
             with col_btn:
                 if st.button("🚀 Entrar", use_container_width=True, type="primary"):
                     if not username_login or not senha_login:
@@ -475,7 +479,7 @@ def carregar_dados():
 
 
 # ==============================================================================
-# SEÇÃO 5 — ABA 1: SOBRE NUTRIÇÃO (conteúdo educativo)
+# SEÇÃO 5 — ABA 1: SOBRE NUTRIÇÃO (conteúdo informativo)
 # ==============================================================================
 
 def aba_sobre_nutricao():
@@ -1118,9 +1122,88 @@ def aba_historico():
                 st.caption(f"🕐 Registrada em: {ref_registro}")
                 st.markdown("---")
 
+# ==============================================================================
+# SEÇÃO 9 — ABA 5: calculador de IMC
+# ==============================================================================               
+def aba_imc():
+    """
+    Quinta aba: calcula o Índice de Massa Corporal (IMC),
+    exibe a classificação e permite salvar o registro.
+    """
+    st.title("⚖️ Calculadora de IMC")
+    
+    usuario = st.session_state.usuario_logado
+    st.markdown(f"Calculando para: **{usuario['username']}**")
+
+    # ---- Entrada de Dados ----
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        peso = st.number_input("Peso (kg):", min_value=1.0, max_value=500.0, value=70.0, step=0.1)
+    with col2:
+        # Altura em metros
+        altura = st.number_input("Altura (m):", min_value=0.5, max_value=2.5, value=1.70, step=0.01)
+
+    if st.button("📊 Calcular IMC", type="primary", use_container_width=True):
+        # Cálculo: IMC = peso / altura²
+        imc = peso / (altura ** 2)
+        
+        # Definição de classes e cores
+        if imc < 18.5:
+            classe = "Abaixo do peso"
+            cor = "warning"
+            desc = "Atenção: Seu peso está abaixo do recomendado para sua altura."
+        elif 18.5 <= imc < 25:
+            classe = "Peso ideal"
+            cor = "normal" # Estilo Streamlit
+            desc = "Parabéns! Você está na faixa de peso considerada saudável."
+        elif 25 <= imc < 30:
+            classe = "Sobrepeso"
+            cor = "warning"
+            desc = "Cuidado: Você está levemente acima do peso ideal."
+        else:
+            classe = "Obesidade"
+            cor = "inverse"
+            desc = "Atenção: Seu IMC indica obesidade. Procure orientação profissional."
+
+        # ---- Exibição do Resultado ----
+        st.divider()
+        
+        c1, c2 = st.columns(2)
+        c1.metric("Seu IMC", f"{imc:.1f}")
+        c2.metric("Classificação", classe)
+
+        if imc >= 18.5 and imc < 25:
+            st.success(desc)
+        elif imc < 18.5 or (imc >= 25 and imc < 30):
+            st.warning(desc)
+        else:
+            st.error(desc)
+
+        # Opcional: Salvar no Banco de Dados
+        # if salvar_registro_imc(usuario['id'], peso, altura, imc):
+        #     st.toast("IMC salvo no seu perfil!", icon="✅")
+
+    st.divider()
+
+    # ---- Tabela de Referência ----
+    with st.expander("📌 Veja a Tabela de Referência (OMS)"):
+        dados_referencia = {
+            "IMC": ["Menos de 18.5", "18.5 – 24.9", "25.0 – 29.9", "30.0 – 34.9", "35.0 – 39.9", "Mais de 40"],
+            "Classificação": ["Abaixo do peso", "Peso Normal", "Sobrepeso", "Obesidade Grau I", "Obesidade Grau II", "Obesidade Grau III"],
+            "Risco de Doenças": ["Elevado", "Mínimo", "Aumentado", "Moderado", "Grave", "Muito Grave"]
+        }
+        df_ref = pd.DataFrame(dados_referencia)
+        st.table(df_ref)
+
+    # ---- Dica de Saúde ----
+    st.info("""
+    **Nota:** O IMC é um indicador útil, mas não mede diretamente a gordura corporal. 
+    Atletas ou idosos podem ter interpretações diferentes devido à massa muscular ou óssea.
+    """)
 
 # ==============================================================================
-# SEÇÃO 9 — SIDEBAR DO USUÁRIO LOGADO
+# SEÇÃO 10 — SIDEBAR DO USUÁRIO LOGADO
 # ==============================================================================
 
 def sidebar_usuario():
@@ -1141,7 +1224,7 @@ def sidebar_usuario():
 
 
 # ==============================================================================
-# SEÇÃO 10 — FUNÇÃO PRINCIPAL (main)
+# SEÇÃO 1 — FUNÇÃO PRINCIPAL (main)
 # Controla o fluxo: login → app principal
 # ==============================================================================
 
@@ -1168,12 +1251,13 @@ def main():
     # ---- USUÁRIO AUTENTICADO ----
     sidebar_usuario()
 
-    # Cria as 4 abas principais
-    tab1, tab2, tab3, tab4 = st.tabs([
+    # Cria as 5 abas principais
+    tab1, tab2, tab3, tab4, tab5 = st.tabs([
         "📖 Sobre Nutrição",
         "⚖️ Calculadora TMB",
         "🔍 Calculadora de Refeição",
-        "📅 Histórico"
+        "📅 Histórico",
+        "⚖️ IMC"
     ])
 
     with tab1:
@@ -1187,10 +1271,15 @@ def main():
 
     with tab4:
         aba_historico()
+    
+    with tab5:
+       aba_imc()
+    
+
 
     # Rodapé
     st.divider()
-    st.caption("Sistema Nutricional — Baseado no Guia Alimentar para a População Brasileira")
+    st.caption("Sistema Nutricional — Baseado no Guia Alimentar para a População Brasileira feito por Rafael Borsoi e Tiago Makowski Spassini")
 
 
 # ==============================================================================
