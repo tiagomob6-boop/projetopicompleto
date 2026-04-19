@@ -2,7 +2,7 @@ import streamlit as st        # Framework para criar o site interativo
 import pandas as pd           # Manipulação de tabelas de dados
 import numpy as np            # Cálculos numéricos
 import os                     # Acesso a arquivos do sistema
-import sqlite3                # Banco de dados local (sem precisar instalar nada extra)
+import sqlite3                # Banco de dados local 
 import hashlib                # Para criptografar senhas com SHA-25
 from datetime import datetime, date  # Trabalhar com datas e horários
 
@@ -19,11 +19,11 @@ st.set_page_config(
 st.markdown("""
 <style>
     /* Cartão centralizado na tela de login */
-    .login-card {
-        background: #f8f9fa;
-        border-radius: 16px;
-        padding: 2rem;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    .login-card { #regras
+        background: #f8f9fa; #cor
+        border-radius: 16px; # arendodamento da borda
+        padding: 2rem; # espaçamento interno
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08); #sombra
     }
 
     /* Cor de destaque nos títulos */
@@ -49,12 +49,13 @@ def init_database():
     cursor = conn.cursor()
 
     # ----- Tabela de usuários -----
+    #  
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS usuarios (
             id            INTEGER PRIMARY KEY AUTOINCREMENT,
             username      TEXT    UNIQUE NOT NULL,   -- Nome de usuário único
             email         TEXT    UNIQUE NOT NULL,   -- E-mail único
-            senha_hash    TEXT    NOT NULL,          -- Senha criptografada (SHA-256)
+            senha_hash    TEXT    NOT NULL,          -- Senha criptografada (SHA-256) # podem conter usuarios com a mesma senha
             data_cadastro TEXT    NOT NULL           -- Data/hora do cadastro
         )
     ''')
@@ -322,6 +323,7 @@ def tela_login():
                             st.rerun()   # Recarrega o app já autenticado
                         else:
                             st.error("❌ Usuário ou senha incorretos.")
+                            st.error("❌ Verifique se voce ja criou a conta a aba: criar conta.")
 
         # ===== ABA DE CADASTRO =====
         with aba_cadastro:
@@ -534,6 +536,8 @@ def aba_sobre_nutricao():
         do emagrecimento saudável. Recomenda-se um déficit gradual de **200 a 500 kcal/dia**.
         """)
 
+        st.markdown("---")
+
 
         col_tmb, col_tmt = st.columns(2)
         with col_tmb:
@@ -552,10 +556,17 @@ def aba_sobre_nutricao():
             • TMB + atividades físicas
             • Fator de atividade: 1,2 a 1,9
             """)
-
-
         st.markdown("---")
-        st.markdown("### ⚖️ 3. Como as Calorias Agem no Corpo")
+        st.markdown("""
+        ### 3. Entendendo o IMC(Indice de Massa Corporal)
+
+        O IMC (Índice de Massa Corporal) é uma medida internacional, baseada na fórmula 
+        (Peso/altura²), que avalia se uma pessoa está em seu peso ideal, sobrepeso ou obesidade. 
+        É um indicador rápido de saúde nutricional, útil para rastreamento, mas não distingue massa magra de gordura.
+        """)
+        st.markdown("---")
+       
+        st.markdown("### ⚖️ 4. Como as Calorias Agem no Corpo")
 
         st.markdown("""
         O corpo funciona como um sistema de energia.
@@ -571,18 +582,23 @@ def aba_sobre_nutricao():
         """)
 
         st.markdown("---")
-        st.markdown("### 🥦 4. Como a Origem dos Alimentos Influencia o Corpo")
+        st.markdown("### 🥦 5. Como a Origem dos Alimentos Influencia o Corpo")
 
         st.markdown("""
         A qualidade dos alimentos impacta diretamente sua saúde.
 
         - **Alimentos naturais:** ricos em fibras, vitaminas e minerais
-        - **Ultraprocessados:** pobres em nutrientes e ricos em aditivos
-
         Consequências:
         - Melhora ou piora da digestão
         - Controle de fome
-        - Risco de doenças (ex: diabetes)
+                    
+        - **Ultraprocessados:** pobres em nutrientes e ricos em aditivos
+
+        Consequências:
+        - Risco de doenças (ex: diabetes,anemia)
+        - Queda de cabelo
+        - Além de enfraquecer o sistema imunológico
+        
         """)
 
         
@@ -611,9 +627,9 @@ def aba_sobre_nutricao():
         st.markdown("---")
         st.header("📌. **Resumo prático dos conceitos chave.**")
         st.info("""
-        - Proteína → 4 kcal/g
-        - Carboidrato → 4 kcal/g
-        - Gordura → 9 kcal/g
+        - 1 Grama de Proteína = 4 kcal
+        - 1 Grama de Carboidrato = 4 kcal/g
+        - 1 Grama de Gordura = 9 kcal/g
 
         Regra básica:
         - Comer mais calorias do que gasta → ganho de peso
@@ -626,7 +642,7 @@ def aba_sobre_nutricao():
 
         Desconfie de dietas da moda. Nutrição saudável é baseada em equilíbrio e evidências
         científicas. Para emagrecimento saudável, faça um déficit calórico moderado de
-        200–500 kcal abaixo da TMT!
+        200–500 kcal abaixo da TMT! E é recomendado fazer atividades físicas.
         """)
         st.markdown("---")
         st.markdown("""
@@ -666,7 +682,8 @@ def aba_calculadora_tmb():
 
         atividade = st.selectbox(
             "Nível de Atividade",
-            ["Sedentário", "Levemente ativo", "Moderado", "Muito ativo", "Extremamente ativo"]
+            ["Sedentário(pouco ou nenhum exercício)", "Levemente ativo(exercício leve 1 a 3 dias/semana)", "Moderado(exercício moderado 3 a 5 dias/semana)", 
+             "Muito ativo(exercício pesado 5 a 6 dias/semana)", "Extremamente ativo (exercício muito pesado, 2 exercíos por dia, atleta, profissional)"]
         )
 
         fatores = {
@@ -694,13 +711,13 @@ def aba_calculadora_tmb():
                 with col_a:
                     st.metric("Taxa Metabólica Basal (TMB)", f"{tmb:.0f} kcal")
                 with col_b:
-                    st.metric("Gasto Total Diário (TDEE)",   f"{tdee:.0f} kcal")
+                    st.metric("Gasto Total Diário (TDEE/TMT)",   f"{tdee:.0f} kcal")
 
                 st.subheader("🥩 Macronutrientes Recomendados")
                 st.info(f"""
                 - **Proteína:**     {peso * 1.5:.0f} g/dia
                 - **Gordura:**      {peso * 1.0:.0f} g/dia
-                - **Carboidrato:**  {peso * 5.0:.0f} g/dia
+                - **Carboidrato:**  {peso * 4.0:.0f} g/dia
                 """)
 
                 # Mostra sugestão de déficit calórico
@@ -727,6 +744,16 @@ def aba_buscador_alimentos():
     no histórico com data e nome personalizados.
     """
     st.title("🔍 Calculadora de Refeição")
+    st.markdown("""Media de medidas
+                
+    - Uma colher de sopa cheia de arroz pesa em media 20 a 25 Gramas
+                
+    - 1 Concha de feijão Média/Cheia: Aproximadamente 100 a 140 Gramas
+                
+    - 1 Concha de feijão Média Rasa: Cerca de 80 a 90 Gramas
+                
+    - 1 Concha de feijão Pequena: Cerca de 50 a 70 Gramas
+     """)
 
     # Carrega base de dados
     df = carregar_dados()
@@ -1004,7 +1031,10 @@ def aba_buscador_alimentos():
         else:
             st.info(
                 "Sua refeição está vazia.\n\n"
-                "Use as abas ao lado para adicionar comidas e bebidas! 👈"
+                "Use a comidas para adicionar comidas"
+                "Use a bebidas para adicionar bebidas"
+                "Se você procurou uma comida e não encontrou verifique a grafia"
+                "Se mesmo assim não encontrar mande o nome da comida no gmail: duvidassite00@Gmail.com"
             )
 
 
